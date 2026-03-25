@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Assignment</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-bottom: 40px;
+      width: 300px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Table 1</h2>
+<table id="table1">
+  <tr>
+    <th>Index #</th>
+    <th>Value</th>
+  </tr>
+</table>
+
+<h2>Table 2</h2>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Alpha</td>
+    <td id="alpha"></td>
+  </tr>
+  <tr>
+    <td>Beta</td>
+    <td id="beta"></td>
+  </tr>
+  <tr>
+    <td>Charlie</td>
+    <td id="charlie"></td>
+  </tr>
+</table>
+
+<script>
+  const data = {
+    A1: 41, A2: 18, A3: 21, A4: 63, A5: 2,
+    A6: 53, A7: 5, A8: 57, A9: 60, A10: 93,
+    A11: 28, A12: 3, A13: 90, A14: 39, A15: 80,
+    A16: 88, A17: 49, A18: 60, A19: 26, A20: 28
+  };
+
+  // Render Table 1
+  const table1 = document.getElementById("table1");
+  for (let key in data) {
+    const row = `<tr><td>${key}</td><td>${data[key]}</td></tr>`;
+    table1.innerHTML += row;
+  }
+
+  // Calculate Table 2
+  const alpha = data.A5 + data.A20;
+  const beta = data.A15 / data.A7;
+  const charlie = data.A13 * data.A12;
+
+  // Display results
+  document.getElementById("alpha").innerText = alpha;
+  document.getElementById("beta").innerText = beta;
+  document.getElementById("charlie").innerText = charlie;
+</script>
+
+</body>
+</html>
